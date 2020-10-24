@@ -44,8 +44,18 @@
                 </nav>
             </div>
         </header>
+        
+        <div class="bg-gray-700">
+            <nav class="container mx-auto flex py-1 space-x-1">
+                @yield('navegacion')
+            </nav>
+        </div>
 
-        @yield('content')
+
+        <div class="py-4">
+            @yield('content')
+        </div>
+
     </div>
 </body>
 </html>

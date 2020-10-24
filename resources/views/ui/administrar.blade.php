@@ -1,0 +1,2 @@
+<a href="{{route('vacantes.index')}}"  class="text-white px-4 bg-teal-400 rounded text-sm uppercase font-bold py-3 hover:bg-green-300  {{Request::is('/vacantes') ? 'bg-green-300':''}}">Ver vacantes</a>
+<a href="{{route('vacantes.create')}}" class="text-white px-4 bg-teal-400 rounded text-sm uppercase font-bold py-3 hover:bg-green-300  {{Request::is('/vacantes/create') ? 'bg-green-300':''}}" >Nueva vacantes</a>

@@ -12,9 +12,17 @@ class VacanteController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+      /*protejer usuario autenticado y verificado*/
+    public function __construct()
+    {
+        $this->middleware(['auth','verified']);
+    }
+
+
     public function index()
     {
-        //
+        return view('vacantes/index');
     }
 
     /**
@@ -25,6 +33,7 @@ class VacanteController extends Controller
     public function create()
     {
         //
+        return view('vacantes/create');
     }
 
     /**
