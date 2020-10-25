@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVacantesTable extends Migration
+class CreateCategoriasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,15 @@ class CreateVacantesTable extends Migration
      */
     public function up()
     {
-        Schema::create('vacantes', function (Blueprint $table) {
+        Schema::create('categorias', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('categoria_id')->constrained()->onDelete('cascade');
-            $table->foreignId('experiencias_id')->constrained()->onDelete('cascade');
+            $table->string('nombre');
+            $table->timestamps();
+        });
+
+        Schema::create('experiencias', function (Blueprint $table) {
+            $table->id();
+            $table->string('nombre');
             $table->timestamps();
         });
     }
@@ -28,6 +33,7 @@ class CreateVacantesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vacantes');
+        Schema::dropIfExists('categorias');
+        Schema::dropIfExists('experiencias');
     }
 }
